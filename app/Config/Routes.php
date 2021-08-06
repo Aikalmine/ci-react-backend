@@ -52,12 +52,18 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
+$routes->group('api', function($routes)
+{
+	$routes->post('login', 'Auth::login');
+	$routes->post('logout', 'Auth::logout');
+	$routes->post('register', 'Auth::register');
 
-$routes->get('product/new',             'Product::new');
-$routes->post('product',                'Product::create');
-$routes->get('product',                 'Product::index');
-$routes->get('product/(:segment)',      'Product::show/$1');
-$routes->get('product/(:segment)/edit', 'Product::edit/$1');
-$routes->put('product/(:segment)',      'Product::update/$1');
-$routes->patch('product/(:segment)',    'Product::update/$1');
-$routes->delete('product/(:segment)',   'Product::delete/$1');
+	$routes->get('product/new',             'Product::new');
+	$routes->post('product',                'Product::create');
+	$routes->get('product',                 'Product::index');
+	$routes->get('product/(:segment)',      'Product::show/$1');
+	$routes->get('product/(:segment)/edit', 'Product::edit/$1');
+	$routes->put('product/(:segment)',      'Product::update/$1');
+	$routes->patch('product/(:segment)',    'Product::update/$1');
+	$routes->delete('product/(:segment)',   'Product::delete/$1');
+});

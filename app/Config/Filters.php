@@ -64,7 +64,6 @@ class Filters extends BaseConfig
 	public $filters = 
 		['auth' => 
 			['before' => [
-            'client/*',
-            'client']]
+            'api/product/*']]
 		];
 }
