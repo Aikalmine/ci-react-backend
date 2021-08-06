@@ -9,7 +9,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Config\Services;
 use Exception;
 
-class JWTAuthenticationFilter implements FilterInterface
+class JWTAuthentication implements FilterInterface
 {
     use ResponseTrait;
 

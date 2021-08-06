@@ -58,6 +58,15 @@ $routes->group('api', function($routes)
 	$routes->post('logout', 'Auth::logout');
 	$routes->post('register', 'Auth::register');
 
+	$routes->get('user/new',             'User::new');
+	$routes->post('user',                'User::create');
+	$routes->get('user',                 'User::index');
+	$routes->get('user/(:segment)',      'User::show/$1');
+	$routes->get('user/(:segment)/edit', 'User::edit/$1');
+	$routes->put('user/(:segment)',      'User::update/$1');
+	$routes->patch('user/(:segment)',    'User::update/$1');
+	$routes->delete('user/(:segment)',   'User::delete/$1');
+
 	$routes->get('product/new',             'Product::new');
 	$routes->post('product',                'Product::create');
 	$routes->get('product',                 'Product::index');

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * composer require firebase/php-jwt
+ * https://github.com/firebase/php-jwt
+ */
 use App\Models\UserModel;
 use Config\Services;
 use Firebase\JWT\JWT;

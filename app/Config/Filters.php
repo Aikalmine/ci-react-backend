@@ -20,7 +20,7 @@ class Filters extends BaseConfig
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
 		'cors' => \App\Filters\Cors::class,
-		'auth' => JWTAuthenticationFilter::class 
+		'auth' => \App\Filters\JWTAuthentication::class 
 	];
 
 	/**
@@ -64,6 +64,6 @@ class Filters extends BaseConfig
 	public $filters = 
 		['auth' => 
 			['before' => [
-            'api/product/*']]
+            'api/*']]
 		];
 }
